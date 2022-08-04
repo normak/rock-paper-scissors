@@ -49,7 +49,10 @@ function game() {
     let computerScore = 0;
     for (let i = 0; i < 5; i++) {
         let player = prompt("Rock Paper Scissors! Make your choice.");
-        let result = playRound(player,getComputerChoice());
+        let computer = getComputerChoice();
+        console.log("Player chooses: " + player);
+        console.log("Computer chooses: " + computer);
+        let result = playRound(player,computer);
         console.log(result);
         if (result.includes("win")){
             playerScore++;
