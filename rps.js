@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    let choice = Math.floor(Math.random() * 3);
+    let choice = Math.floor(Math.random() * 3); //Generates a number from 0 to 2
     if (choice == 0) {
         return "Rock";
     }
@@ -15,8 +15,8 @@ function getComputerChoice() {
 }
 function playRound(playerSelection, computerSelection) {
 
-    playerSelection = playerSelection.toLowerCase();
-    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+    playerSelection = playerSelection.toLowerCase(); //Simplify user input by changing to all lowercase
+    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1); //Capitalize the first letter to match the project's specification
 
     if (playerSelection == "Rock" && computerSelection == "Paper") {
         return "You lose! Paper beats rock.";
@@ -50,14 +50,14 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let player = prompt("Rock Paper Scissors! Make your choice.");
         let computer = getComputerChoice();
-        console.log("Player chooses: " + player);
+        console.log("Player chooses: " + player); //Explicitly show Player and Computer's choices
         console.log("Computer chooses: " + computer);
         let result = playRound(player,computer);
         console.log(result);
-        if (result.includes("win")){
-            playerScore++;
+        if (result.includes("win")){ //if result has the word "win" in it, that means the player won
+            playerScore++; 
         }
-        else if (result.includes("lose")){
+        else if (result.includes("lose")){ //if result has the word "lose" in it, that means the player lost
             computerScore++;
         }
         console.log("Player: " + playerScore);
